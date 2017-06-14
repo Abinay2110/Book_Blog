@@ -1,0 +1,27 @@
+<%= form_for(@view) do |f|%>
+<% if @view.errors.any?%>
+<p><% @view.errors.full_messages.each do |a|%>
+<%= a %></p>
+<%end%>
+<%end%>
+
+<%= f.label :title %></br>
+<%= f.text_field :title %></br></br>
+<%= f.label :summary %></br>
+<%= f.text_area :summary, size: "12*20" %></br></br>
+
+<%= f.fields_for :comments do |comment| %>
+<%= comment.label :destroy %></br>
+<%= comment.check_box :_destroy %></br>
+<%= comment.label :commenter %></br>
+<%= comment.text_field :commenter %></br></br>
+<%= comment.label :body %></br>
+<%= comment.text_area :body %></br></br>
+<% end %>
+
+<%= f.submit "Update" %></br></br>
+<% end %> 
+</br>
+
+
+

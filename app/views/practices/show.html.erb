@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @practice.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @practice.body %>
+</p>
+
+<%= link_to 'Edit', edit_practice_path(@practice) %> |
+<%= link_to 'Back', practices_path %>

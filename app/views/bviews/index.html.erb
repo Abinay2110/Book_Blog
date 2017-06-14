@@ -1,0 +1,37 @@
+<h1>Bviews#index</h1>
+
+<% if !user_signed_in? %>
+<%= link_to 'Sign Up',new_user_registration_path %>
+<%= link_to 'Sign In',new_user_session_path %>
+<% else %>
+<%= link_to 'Log Out',destroy_user_session_path,method: :delete %>
+<% end %>
+
+<% @view.each do |f| %>
+
+<h3> <%= f.title %> </h3>
+<p><%= f.summary %> </p>
+<p>created by : 
+<% if f.user_id %>
+<%= f.user.email %></br>
+<% end %></p>
+
+<%= link_to 'Show',bview_path(f) %> &nbsp;&nbsp;&nbsp;&nbsp;
+
+<% if current_user == f.user && f.user_id %>
+
+<% if can? :update, f%>
+<%= link_to 'Edit',edit_bview_path(f) %>&nbsp;&nbsp;&nbsp;&nbsp;
+<% end %>
+
+<% if can? :delete, f %>
+<%= link_to 'delete',bview_path(f),method: :delete %></td>
+<% end %>
+
+<% end %>
+
+<hr>
+<% end %>
+
+</br></br>
+<%= link_to "Add Book",new_bview_path %>

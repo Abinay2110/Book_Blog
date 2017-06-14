@@ -1,0 +1,19 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @view.title %>
+</p>
+ 
+<p>
+  <strong>Summary:</strong>
+  <%= @view.summary %>
+</p>
+
+<%= link_to "Edit post",edit_bview_path(@view) %>
+<%= link_to "View All",bviews_path %>
+
+<h2><b>Comments</b></h2>
+<%= render @view.comments %>
+
+<%= render 'comments/commentform' %>
+</br>

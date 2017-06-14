@@ -1,0 +1,17 @@
+<h1>Formprac#create</h1>
+<p>Find me in app/views/formprac/create.html.erb</p>
+
+<%= form_tag("/formprac/accept",method: "post") do %>
+<%= label_tag(:q,"Name")%>
+<%= text_field_tag(:q)%>
+<%= check_box_tag(:hobbies,"Like_Cricket")%>
+<%= check_box_tag(:hobbies1,"Like_Football")%>
+
+<%= radio_button_tag(:gender,"Male")%>
+<%= label_tag(:gender,"Male")%></br>
+<%= radio_button_tag(:gender,"Female")%>
+<%= label_tag(:gender,"Female")%>
+
+
+<%= submit_tag("Submit")%>
+<% end%>
