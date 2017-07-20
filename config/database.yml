@@ -10,14 +10,14 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   pool: 5
 
 development:
   <<: *default
   database: bookstore_development
-  username: root
+  username: postgres
   password: password
   host: 127.0.0.1
   
@@ -27,7 +27,7 @@ development:
 test:
   <<: *default
   database: bookstore_test
-  username: root
+  username: postgres
   password: password
   host: 127.0.0.1
   

@@ -51,3 +51,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'cancan'
 gem 'invoicing'
+gem 'doorkeeper', '~> 4.2', '>= 4.2.6'
+gem 'active_model_serializers'
+gem 'pg'
